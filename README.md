@@ -28,9 +28,9 @@ cv/               → indirilebilir CV (TR / EN)
 
 ## Yayınlamak (GitHub Pages)
 
-1. GitHub'da `portfolio` adında repo aç, dosyaları push et.
+1. GitHub'da `portfolyo` adında repo aç, dosyaları push et.
 2. Repo → Settings → Pages → Branch: `main` / root → Save.
-3. Birkaç dakika sonra `https://erenece.github.io/portfolio` adresinde yayında.
+3. Birkaç dakika sonra `https://erenece.github.io/portfolyo` adresinde yayında.
 4. Yayın adresi farklıysa `index.html` içindeki `og:url` ve `og:image` adreslerini düzelt.
 
 ## Yapılacaklar
