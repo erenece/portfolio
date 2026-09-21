@@ -1,0 +1,7 @@
+# Claude Code / editör ayarları
+.claude/
+.vscode/
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+desktop.ini

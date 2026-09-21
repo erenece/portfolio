@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <!-- Arama motorlarında ve sekmede görünen başlık/açıklama -->
+  <title data-i18n="meta.title">Ece Eren — Full Stack Web & Mobile Developer</title>
+  <meta name="description" content="Ece Eren — Full Stack Web & Mobile Developer. Frontend, UI/UX ve yapay zeka destekli projeler.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Sosyal paylaşım kartı (LinkedIn, Twitter, WhatsApp). og:url ve og:image yayınlanan adrese göre tam URL olmalı. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ece Eren — Full Stack Web & Mobile Developer">
+  <meta property="og:description" content="Frontend, UI/UX ve yapay zeka destekli projeler. Staj ve junior pozisyonlara açığım.">
+  <meta property="og:image" content="https://erenece.github.io/portfolio/images/og.jpg">
+  <meta property="og:url" content="https://erenece.github.io/portfolio/">
+  <meta property="og:locale" content="tr_TR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ece Eren — Full Stack Web & Mobile Developer">
+  <meta name="twitter:description" content="Frontend, UI/UX ve yapay zeka destekli projeler.">
+  <meta name="twitter:image" content="https://erenece.github.io/portfolio/images/og.jpg">
+
+  <!-- Google Fonts: Literata — sadece kullanılan ağırlıklar (400/600/700 + italik 400) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Klavye kullanıcıları için: Tab'a basınca görünür, içeriğe atlar -->
+  <a href="#hakkimda" class="skip-link" data-i18n="skip">İçeriğe atla</a>
+
+  <!-- ========== HEADER ==========
+       Çeviri: data-i18n="anahtar" olan elemanların metni script.js sözlüğünden gelir. -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">Ece Eren<span class="logo__cursor">_</span></a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#top" class="nav__link"><span data-i18n="nav.home">ana sayfa</span></a></li>
+          <li><a href="#tech-stack" class="nav__link"><span data-i18n="nav.skills">tech stack</span></a></li>
+          <li><a href="#projeler" class="nav__link"><span data-i18n="nav.projects">projeler</span></a></li>
+          <li><a href="#deneyim" class="nav__link"><span data-i18n="nav.experience">deneyim</span></a></li>
+          <li><a href="#iletisim" class="nav__link"><span data-i18n="nav.contact">iletişim</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="header__right">
+        <button class="lang-toggle" aria-label="Dili değiştir">EN</button>
+        <!-- Mobilde görünen hamburger butonu; script.js açıp kapatıyor -->
+        <button class="nav-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section id="top" class="hero">
+      <!-- Akışkan arka plan (sadece CSS + SVG filtre):
+           .fluid__layer içindeki lekeler #liquid filtresiyle bükülüyor → sıvı kenarlar.
+           .grain: film greni dokusu, filtrenin dışında. script.js görünmezken animasyonu durdurur. -->
+      <div class="fluid" aria-hidden="true">
+        <svg width="0" height="0" style="position:absolute">
+          <filter id="liquid" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+            <feTurbulence type="fractalNoise" baseFrequency="0.0035 0.006" numOctaves="2" seed="7" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="140" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </svg>
+
+        <div class="fluid__layer">
+          <!-- açık lekeler -->
+          <span class="fluid__blob fluid__blob--teal"></span>
+          <span class="fluid__blob fluid__blob--aqua"></span>
+          <span class="fluid__blob fluid__blob--green"></span>
+          <span class="fluid__blob fluid__blob--lime"></span>
+          <!-- koyu şekiller, kenarı pembe -->
+          <span class="fluid__dark fluid__dark--navy"></span>
+          <span class="fluid__dark fluid__dark--brown"></span>
+          <span class="fluid__dark fluid__dark--s1"></span>
+          <span class="fluid__dark fluid__dark--s2"></span>
+          <span class="fluid__dark fluid__dark--s3"></span>
+          <span class="fluid__dark fluid__dark--s4"></span>
+          <span class="fluid__dark fluid__dark--s5"></span>
+          <span class="fluid__dark fluid__dark--r1"></span>
+          <span class="fluid__dark fluid__dark--r2"></span>
+          <!-- pembe parlamalar -->
+          <span class="fluid__pink fluid__pink--1"></span>
+          <span class="fluid__pink fluid__pink--2"></span>
+          <span class="fluid__pink fluid__pink--3"></span>
+        </div>
+        <span class="grain"></span>
+      </div>
+
+      <div class="hero__content">
+        <h1 class="hero__title">Ece Eren</h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">Full Stack Web &amp; Mobil Geliştirici</p>
+        <div class="hero__actions">
+          <!-- CV indir: <details> tıklanınca dil seçenekleri açılır; dışarı tıklayınca JS kapatır -->
+          <details class="dropdown">
+            <summary class="btn" data-i18n="cv.button">CV indir ▾</summary>
+            <div class="dropdown__menu">
+              <a href="cv/Ece_Eren_CV_TR.pdf" download class="dropdown__item" data-i18n="cv.tr">Türkçe</a>
+              <a href="cv/Ece_Eren_CV_EN.pdf" download class="dropdown__item" data-i18n="cv.en">English</a>
+            </div>
+          </details>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========== HAKKIMDA ========== -->
+    <section id="hakkimda" class="section rail">
+      <div class="container">
+        <h2 class="section__title marker" data-i18n="about.title">Hakkımda</h2>
+        <div class="about">
+          <p data-i18n="about.p1">
+            Mersin Üniversitesi Bilgisayar Programcılığı mezunuyum; İstanbul Üniversitesi'nde
+            Yönetim Bilişim Sistemleri lisans eğitimime devam ediyorum. Yapay Zeka ve Teknoloji
+            Akademisi'nde AI Fellow olarak Python ve yapay zeka odaklı bir programda yer alıyorum.
+          </p>
+          <p data-i18n="about.p2">
+            Frontend geliştirme ile arayüz tasarımını bir arada ele alan bir yaklaşım benimsiyorum.
+            Figma ile arayüz tasarlıyor; HTML, CSS, JavaScript ve React ekseninde modern web
+            teknolojilerini sistemli biçimde ilerletiyorum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKİLLER ========== -->
+    <section id="tech-stack" class="section rail">
+      <div class="container">
+        <h2 class="section__title section__title--big marker" data-i18n="skills.title">Tech Stack</h2>
+
+        <!-- Kategorili monokrom logo satırları: solda kategori, sağda logolar (gri; hover'da renkli).
+             Yeni skill: ilgili satıra bir <li> kopyala, logoyu images/icons/ altına koy.
+             Öğrenme aşamasındakiler: stack__item--learning -->
+        <ul class="stack">
+          <li class="stack__row">
+            <h3 class="stack__cat" data-i18n="skills.cat.web">Web Geliştirme</h3>
+            <ul class="stack__list">
+            <li class="stack__item">
+              <img src="images/icons/html5.svg" alt="" width="30" height="30" loading="lazy">
+              <span>HTML</span>
+            </li>
+            <li class="stack__item">
+              <img src="images/icons/css.svg" alt="" width="30" height="30" loading="lazy">
+              <span>CSS</span>
+            </li>
+            <li class="stack__item stack__item--learning">
+              <img src="images/icons/javascript.svg" alt="" width="30" height="30" loading="lazy">
+              <span>JavaScript</span>
+              <small data-i18n="tags.learningLabel">öğreniyorum</small>
+            </li>
+            <li class="stack__item stack__item--learning">
+              <img src="images/icons/react.svg" alt="" width="30" height="30" loading="lazy">
+              <span>React</span>
+              <small data-i18n="tags.learningLabel">öğreniyorum</small>
+            </li>
+            </ul>
+          </li>
+          <li class="stack__row">
+            <h3 class="stack__cat" data-i18n="skills.cat.mobile">Mobil Geliştirme</h3>
+            <ul class="stack__list">
+            <li class="stack__item">
+              <img src="images/icons/figma.svg" alt="" width="30" height="30" loading="lazy">
+              <span>Figma</span>
+            </li>
+            <li class="stack__item stack__item--learning">
+              <img src="images/icons/android.svg" alt="" width="30" height="30" loading="lazy">
+              <span>Android</span>
+              <small data-i18n="tags.learningLabel">öğreniyorum</small>
+            </li>
+            <li class="stack__item stack__item--learning">
+              <img src="images/icons/react.svg" alt="" width="30" height="30" loading="lazy">
+              <span>React Native</span>
+              <small data-i18n="tags.learningLabel">öğreniyorum</small>
+            </li>
+            </ul>
+          </li>
+          <li class="stack__row">
+            <h3 class="stack__cat" data-i18n="skills.cat.ai">Yapay Zeka & Backend</h3>
+            <ul class="stack__list">
+            <li class="stack__item">
+              <img src="images/icons/python.svg" alt="" width="30" height="30" loading="lazy">
+              <span>Python</span>
+            </li>
+            <li class="stack__item">
+              <img src="images/icons/claude.svg" alt="" width="30" height="30" loading="lazy">
+              <span>Claude</span>
+            </li>
+            <li class="stack__item">
+              <img src="images/icons/langchain.svg" alt="" width="30" height="30" loading="lazy">
+              <span>LangChain</span>
+            </li>
+            <li class="stack__item">
+              <img src="images/icons/fastapi.svg" alt="" width="30" height="30" loading="lazy">
+              <span>FastAPI</span>
+            </li>
+            <li class="stack__item">
+              <img src="images/icons/streamlit.svg" alt="" width="30" height="30" loading="lazy">
+              <span>Streamlit</span>
+            </li>
+            </ul>
+          </li>
+          <li class="stack__row">
+            <h3 class="stack__cat" data-i18n="skills.cat.tools">Araçlar & Veri</h3>
+            <ul class="stack__list">
+            <li class="stack__item">
+              <img src="images/icons/git.svg" alt="" width="30" height="30" loading="lazy">
+              <span>Git</span>
+            </li>
+            <li class="stack__item">
+              <img src="images/icons/github.svg" alt="" width="30" height="30" loading="lazy">
+              <span>GitHub</span>
+            </li>
+            <li class="stack__item">
+              <img src="images/icons/database.svg" alt="" width="30" height="30" loading="lazy">
+              <span>SQL Server</span>
+            </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== PROJELER ========== -->
+    <section id="projeler" class="section rail">
+      <div class="container">
+        <h2 class="section__title section__title--big marker" data-i18n="projects.title">Projelerim</h2>
+
+        <!-- Öne çıkan proje: solda metin, sağda büyük görsel -->
+        <article class="featured">
+          <div class="featured__text">
+            <p class="eyebrow" data-i18n="projects.featured">Öne çıkan proje</p>
+            <h3 class="featured__title">Gastromic</h3>
+            <p class="featured__meta">Figma · UI/UX · <span data-i18n="tags.animation">Animasyon</span></p>
+            <p class="featured__desc" data-i18n="projects.gastromic.desc">
+              Kişiselleştirilmiş gastronomi ve seyahat rotaları sunan AI destekli mobil uygulama.
+              Rolüm: görsel kimlik ve animasyon (ikon, splash screen), ayarlar/profil/tercihler
+              modüllerinin UI/UX tasarımı.
+            </p>
+            <div class="featured__actions">
+              <button class="btn" type="button" data-video="videos/gastromic.webm" data-i18n="projects.watch">Demoyu izle</button>
+              <a href="https://github.com/erenece/Gastromic" target="_blank" rel="noopener" class="work__link"><img src="images/icons/github-white.svg" alt="" width="14" height="14">GitHub</a>
+            </div>
+          </div>
+          <button class="featured__media" type="button" data-video="videos/gastromic.webm" aria-label="Gastromic demo videosunu oynat">
+            <img src="images/gastromic.jpg" alt="Gastromic uygulaması" loading="lazy">
+          </button>
+        </article>
+
+        <!-- Diğer projeler: kart gridi. Videolu olanlarda görsel bir <button> (data-video). -->
+        <div class="works">
+          <article class="work">
+            <button class="work__media" type="button" data-video="videos/aura.mp4" aria-label="Aura.AI demo videosunu oynat">
+              <img src="images/aura.jpg" alt="Aura.AI paneli" loading="lazy">
+              <span class="work__play" aria-hidden="true">▶</span>
+            </button>
+            <h3 class="work__title">Aura.AI</h3>
+            <p class="work__cat" data-i18n="projects.cat.ai">Yapay Zeka · Otomasyon</p>
+            <p class="work__desc" data-i18n="projects.aura.desc">
+              Envanter yönetimini otomatikleştiren ve WhatsApp üzerinden müşteri iletişimini
+              yöneten AI asistan. Yapay Zeka ve Teknoloji Akademisi hackathonu için tek başıma
+              geliştirdim.
+            </p>
+            <ul class="tech">
+              <li><img src="images/icons/python.svg" alt="">Python</li>
+              <li><img src="images/icons/whatsapp.svg" alt="">WhatsApp API</li>
+              <li>AI Agent</li>
+            </ul>
+            <a href="https://github.com/erenece/aura.ai" target="_blank" rel="noopener" class="work__link"><img src="images/icons/github-white.svg" alt="" width="14" height="14">GitHub</a>
+          </article>
+
+          <article class="work">
+            <button class="work__media" type="button" data-video="videos/docmind.mp4" aria-label="DocMind-AI demo videosunu oynat">
+              <img src="images/docmind.jpg" alt="DocMind-AI arayüzü" loading="lazy">
+              <span class="work__play" aria-hidden="true">▶</span>
+            </button>
+            <h3 class="work__title">DocMind-AI</h3>
+            <p class="work__cat" data-i18n="projects.cat.ai2">Yapay Zeka · RAG</p>
+            <p class="work__desc" data-i18n="projects.docmind.desc">
+              Belgeler üzerinde semantik arama yapan RAG tabanlı doküman analiz aracı.
+              Groq ile hızlı çıkarım, Streamlit arayüzü.
+            </p>
+            <ul class="tech">
+              <li><img src="images/icons/python.svg" alt="">Python</li>
+              <li><img src="images/icons/langchain.svg" alt="">LangChain</li>
+              <li><img src="images/icons/streamlit.svg" alt="">Streamlit</li>
+              <li>ChromaDB</li>
+            </ul>
+            <a href="https://github.com/erenece/DocMind-AI" target="_blank" rel="noopener" class="work__link"><img src="images/icons/github-white.svg" alt="" width="14" height="14">GitHub</a>
+          </article>
+
+          <article class="work">
+            <div class="work__media work__media--empty" aria-hidden="true"><span>ExpoTrack</span></div>
+            <h3 class="work__title">ExpoTrack</h3>
+            <p class="work__cat" data-i18n="projects.cat.desktop">Masaüstü · Yönetim Sistemi</p>
+            <p class="work__desc" data-i18n="projects.expotrack.desc">
+              Sergi ve fuar planlama, stant takibi için yönetim sistemi. Mersin Üniversitesi
+              bitirme projesi.
+            </p>
+            <ul class="tech">
+              <li>C#</li>
+              <li><img src="images/icons/dotnet.svg" alt="">.NET</li>
+              <li>SQL Server</li>
+            </ul>
+            <a href="https://github.com/erenece/ExpoTrack" target="_blank" rel="noopener" class="work__link"><img src="images/icons/github-white.svg" alt="" width="14" height="14">GitHub</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DENEYİM ========== -->
+    <section id="deneyim" class="section rail">
+      <div class="container">
+        <h2 class="section__title section__title--big marker" data-i18n="exp.title">Deneyim</h2>
+
+        <ul class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__date" data-i18n="exp.fellow.date">Ara 2025 — devam ediyor · Uzaktan</span>
+            <h3 class="timeline__title">Artificial Intelligence Fellow</h3>
+            <p class="timeline__org" data-i18n="org.yzta">Yapay Zeka ve Teknoloji Akademisi</p>
+            <p class="timeline__desc" data-i18n="exp.fellow.desc">
+              31.700 başvuru arasından seçilen 1.500 bursiyerden biri (~%4,7 kabul). Google Türkiye,
+              Türkiye Girişimcilik Vakfı ve T3 iş birliğiyle yürütülen program. Odak: Python ile yapay
+              zeka geliştirme, teknoloji girişimciliği.
+            </p>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__date" data-i18n="exp.intern.date">Haz 2025 — Ağu 2025 · Adana</span>
+            <h3 class="timeline__title">Software Development Intern</h3>
+            <p class="timeline__org" data-i18n="exp.intern.org">Adana Büyükşehir Belediyesi</p>
+            <p class="timeline__desc" data-i18n="exp.intern.desc">
+              İç yazılım çözümleri ve web uygulamalarının geliştirilmesine destek; BT ekibiyle
+              teknik sorun giderme ve iş akışı iyileştirme.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- ========== EĞİTİM ========== -->
+    <section id="egitim" class="section rail">
+      <div class="container">
+        <h2 class="section__title section__title--big marker" data-i18n="edu.title">Eğitim</h2>
+        <ul class="plain">
+              <li>
+                <span class="plain__date" data-i18n="edu.ongoing">devam ediyor</span>
+                <strong data-i18n="edu.mis">Yönetim Bilişim Sistemleri (Lisans)</strong>
+                <span class="plain__meta" data-i18n="edu.istanbul">İstanbul Üniversitesi</span>
+              </li>
+              <li>
+                <span class="plain__date" data-i18n="edu.cp.date">Eyl 2023 — May 2025</span>
+                <strong data-i18n="edu.cp">Bilgisayar Programcılığı (Önlisans)</strong>
+                <span class="plain__meta" data-i18n="edu.mersin">Mersin Üniversitesi</span>
+              </li>
+            </ul>
+      </div>
+    </section>
+
+    <!-- ========== SERTİFİKALAR ========== -->
+    <section id="sertifikalar" class="section rail">
+      <div class="container">
+        <h2 class="section__title section__title--big marker" data-i18n="cert.title">Sertifikalar</h2>
+        <!-- Yeni sertifika için bir <li> kopyala -->
+            <ul class="plain plain--cols">
+              <li>
+                <span class="plain__date" data-i18n="cert.google.org">Google · Tem 2026</span>
+                <strong>Google Project Management Professional Certificate</strong>
+                <ul class="tech tech--sm"><li>Agile</li><li data-i18n="tags.pm">Proje Planlama</li><li>Scrum</li></ul>
+              </li>
+              <li>
+                <span class="plain__date" data-i18n="cert.dl.org">YZTA · Nis 2026</span>
+                <strong>Deep Learning</strong>
+                <ul class="tech tech--sm"><li>NLP</li><li>LLM Engineering</li><li>AI Agents</li></ul>
+              </li>
+              <li>
+                <span class="plain__date" data-i18n="cert.web.org">YZTA · Mar 2026</span>
+                <strong>Web Application Development</strong>
+                <ul class="tech tech--sm"><li>FastAPI</li><li>Docker</li><li>Gemini API</li></ul>
+              </li>
+              <li>
+                <span class="plain__date">Udemy · <span data-i18n="cert.inProgress">devam ediyor</span></span>
+                <strong>The Complete Web Development Bootcamp</strong>
+                <span class="plain__meta">Angela Yu</span>
+              </li>
+              <li><span class="plain__date" data-i18n="cert.ent1.org">YZTA · Şub 2026</span><strong>Fundamentals of Entrepreneurship</strong></li>
+              <li><span class="plain__date" data-i18n="cert.ent2.org">YZTA · Şub 2026</span><strong>Finance for Entrepreneurs</strong></li>
+              <li><span class="plain__date" data-i18n="cert.ent3.org">YZTA · Mar 2026</span><strong>Human Resources for Entrepreneurs</strong></li>
+              <li><span class="plain__date" data-i18n="cert.ent4.org">YZTA · Mar 2026</span><strong>Legal Essentials for Entrepreneurs</strong></li>
+              <li><span class="plain__date" data-i18n="cert.unity.org">Udemy · Eki 2025</span><strong>Sıfırdan Oyun Geliştirme: Temel Unity C#</strong></li>
+            </ul>
+        <p class="note" data-i18n="cert.note">YZTA: Yapay Zeka ve Teknoloji Akademisi</p>
+      </div>
+    </section>
+
+    <!-- ========== İLETİŞİM ========== -->
+    <section id="iletisim" class="section section--contact">
+      <div class="container contact">
+        <div>
+          <h2 class="contact__title" data-i18n="contact.title">Birlikte çalışalım</h2>
+          <p class="contact__text" data-i18n="contact.lead">
+            Frontend, UI/UX ya da küçük bir web projesi için<br>
+            e-posta ile ulaşabilirsin.
+          </p>
+          <a href="mailto:eceeren.dev@gmail.com" class="contact__mail">eceeren.dev@gmail.com</a>
+          <ul class="contact__links">
+            <li><a href="https://github.com/erenece" target="_blank" rel="noopener"><img src="images/icons/github-white.svg" alt="" width="26" height="26">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/ece-eren-7806ab247" target="_blank" rel="noopener"><img src="images/icons/linkedin.svg" alt="" width="26" height="26">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="contact__block">
+          <p class="contact__blocklabel" data-i18n="status.label">Şu an</p>
+          <ul class="contact__status">
+            <li data-i18n="status.open">Staj ve junior frontend pozisyonlarına açığım</li>
+            <li data-i18n="status.remote">Adana · uzaktan çalışmaya uygun</li>
+          </ul>
+          <p class="contact__reply">
+            <span data-i18n="status.reply1">Genelde 24 saat içinde dönüş yaparım.</span><br>
+            <span data-i18n="status.reply2">Kısa bir merhaba bile yeterli.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        © <span id="year"></span> Ece Eren
+        <span class="footer__sep">·</span> <span data-i18n="footer.text">HTML, CSS, JS ile yapıldı</span>
+        <span class="footer__sep">·</span> <a href="https://github.com/erenece/portfolio" target="_blank" rel="noopener" class="footer__link" data-i18n="footer.source">Kaynak kod</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Video penceresi (modal). Başta gizli; script.js açıp kapatıyor. -->
+  <div class="modal" hidden role="dialog" aria-modal="true" aria-label="Proje demo videosu">
+    <div class="modal__box">
+      <button class="modal__close" type="button" aria-label="Kapat">✕</button>
+      <video class="modal__video" controls playsinline></video>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
